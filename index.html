@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pravila – IamVikoYT Discord</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --card-bg: #f0f0f0;
+            --accent-color: #7289da;
+        }
+
+        body.dark {
+            --bg-color: #2c2f33;
+            --text-color: #ffffff;
+            --card-bg: #23272a;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--accent-color);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .rule {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #5b6eae;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4em;
+            }
+
+            .button {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
+
+    <header>
+        <h1>Pravila Discord strežnika IamVikoYT</h1>
+    </header>
+
+    <div class="container">
+        <div class="rule"><strong>1.</strong> Spoštuj vse člane in osebje. Ni sovražnega govora ali žalitev.</div>
+        <div class="rule"><strong>2.</strong> Brez spama, floodanja ali nepotrebnega označevanja (pinganja).</div>
+        <div class="rule"><strong>3.</strong> Prepovedana je promocija drugih strežnikov brez dovoljenja.</div>
+        <div class="rule"><strong>4.</strong> Uporabljaj kanale za predvideni namen.</div>
+        <div class="rule"><strong>5.</strong> Brez NSFW/NSFL vsebin (ni primerno za mladoletne).</div>
+        <div class="rule"><strong>6.</strong> Upoštevaj navodila moderatorjev in adminov.</div>
+        <div class="rule"><strong>7.</strong> Imej primeren vzdevek in profilno sliko.</div>
+        <div class="rule"><strong>8.</strong> Ne izkoriščaj botov ali sistemskih funkcij.</div>
+        <div class="rule"><strong>9.</strong> Vsaka kršitev pravil ima lahko za posledico opozorilo, izgon ali ban.</div>
+        <div class="rule"><strong>10.</strong> Z vstopom na strežnik se strinjaš s pravili.</div>
+
+        <div class="buttons">
+            <a href="https://discord.gg/xc6ssekACd" target="_blank" class="button">Pridruži se Discord strežniku</a>
+            <a href="https://www.youtube.com/@IamViko" target="_blank" class="button">Obišči YouTube kanal</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'Temno' : 'Svetlo');
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark');
+            }
+        };
+    </script>
+
+</body>
+</html>
